@@ -2,3 +2,310 @@
     height: 80vh;
     background-color: aliceblue;
 }
+
+/* Accessibility: Screen-reader only text */
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    max-width: 48rem; /* ~768px */
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    color: #1f2937;
+}
+
+.header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+/* Form Styles */
+.form {
+    margin-bottom: 2rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .inputGroup {
+        flex-direction: row;
+    }
+}
+
+.input, .searchInput {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.input:focus, .searchInput:focus, .select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.select {
+    padding: 0.625rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Buttons */
+.buttonPrimary, .buttonSuccess, .buttonGhost {
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.buttonPrimary:focus, .buttonSuccess:focus, .buttonGhost:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.buttonPrimary { background-color: #2563eb; color: white; }
+.buttonPrimary:hover { background-color: #1d4ed8; }
+
+.buttonSuccess { background-color: #059669; color: white; }
+.buttonSuccess:hover { background-color: #047857; }
+
+.buttonGhost { background-color: #f3f4f6; color: #374151; }
+.buttonGhost:hover { background-color: #e5e7eb; }
+
+.error {
+    color: #b91c1c;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Tools Section (Search & Filter) */
+.toolsSection {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.searchGroup {
+    margin-bottom: 1rem;
+}
+
+.searchInput {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filterGroup {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem; /* Space for focus rings */
+}
+
+.filterBtn {
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover {
+    background-color: #e5e7eb;
+}
+
+.filterBtn:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.filterBtnActive {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+}
+
+/* Task List */
+.taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.emptyState {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem 0;
+    font-size: 1rem;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+@media (min-width: 640px) {
+    .taskItem {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.taskItemCompleted {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+}
+
+/* Edit Mode */
+.editMode {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .editMode {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.editInputs {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+@media (min-width: 640px) {
+    .editInputs { flex-direction: row; }
+}
+
+.editActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Task Display Mode */
+.taskInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .taskInfo { margin-bottom: 0; }
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: #2563eb;
+}
+
+.checkbox:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.taskTitle, .taskTitleCompleted {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.taskTitle { color: #111827; }
+.taskTitleCompleted { color: #9ca3af; text-decoration: line-through; }
+
+.priorityBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.priorityHigh { background-color: #fee2e2; color: #991b1b; }
+.priorityMedium { background-color: #fef3c7; color: #92400e; }
+.priorityLow { background-color: #d1fae5; color: #065f46; }
+.priorityCompleted { background-color: #f3f4f6; color: #6b7280; }
+
+.taskActions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.editBtn, .deleteBtn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.editBtn { color: #4f46e5; }
+.editBtn:hover { background-color: #e0e7ff; }
+.editBtn:focus { outline: 2px solid #6366f1; border-color: transparent; }
+
+.deleteBtn { color: #dc2626; }
+.deleteBtn:hover { background-color: #fee2e2; }
+.deleteBtn:focus { outline: 2px solid #ef4444; border-color: transparent; }
